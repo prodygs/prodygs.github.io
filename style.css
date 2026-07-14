@@ -1,0 +1,67 @@
+:root {
+  --background-color: #000000;
+  --primary-color: #CCCCCC;
+  --secondary-color: #4188e5;
+  --secondary-hover-color: #73a0db;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+header {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-hover-color);
+
+}
+
+hr {
+  color: var(--secondary-color);
+  opacity:100;
+}
+
+.carousel-indicators {
+  top:50px
+}
+
+.carousel-caption {
+  top:0px
+}
+
+b {
+  color: var(--primary-color);
+}
+
+li {
+  color: var(--primary-color);
+}

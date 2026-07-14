@@ -1,1 +1,138 @@
-Hello
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="ProDyGS: Dynamic Gaussian Splatting from a Single Static Monocular Camera">
+
+        <!--Facebook preview-->
+        <meta property="og:image" content="https://prodygs.github.io/assets/social_card.png">
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://prodygs.github.io/"/>
+        <meta property="og:title" content="ProDyGS: Dynamic Gaussian Splatting from a Single Static Monocular Camera"/>
+        <meta property="og:description" content="ProDyGS is a method for dynamic Gaussian splatting from a single static monocular camera, achieving state-of-the-art performance in novel view synthesis."/>
+
+        <!--Twitter preview-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ProDyGS: Dynamic Gaussian Splatting from a Single Static Monocular Camera" />
+        <meta name="twitter:description" content="ProDyGS is a method for dynamic Gaussian splatting from a single static monocular camera, achieving state-of-the-art performance in novel view synthesis."/>
+        <meta name="twitter:image" content="https://prodygs.github.io/assets/social_card.png">
+
+        <title>ProDyGS</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+            rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+            crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+              crossorigin="anonymous">
+
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css
+          integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+
+        <link href="style.css" rel="stylesheet">
+        <link rel="icon" href="https://www.flaticon.com/free-icons/tripod" title="tripod icons">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row text-center">
+                <h1 class="mt-3">ProDyGS</h1>
+                <h3>Dynamic Gaussian Splatting from a Single Static Monocular Camera</h3>
+                <h4 class="mb-4">IROS 2026</h4>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+                    <h6>
+                        <a href="https://www.ugoleonecavalcanti.com/" target="_blank"><nobr>Ugo Leone Cavalcanti<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://mattpoggi.github.io/" target="_blank"><nobr>Matteo Poggi<sup>1</sup></nobr></a> &emsp;
+                        <a href="https://fabiotosi92.github.io/" target="_blank"><nobr>Fabio Tosi<sup>1</sup></nobr></a></br>
+                        <a href="https://andreaconti.github.io/" target="_blank"><nobr>Andrea Conti<sup>2</sup></nobr></a> &emsp;
+                        <a href="https://scholar.google.com/citations?user=yYHJGZUAAAAJ&hl=en" target="_blank"><nobr>Valerio Cambareri<sup>2</sup></nobr></a> &emsp;
+                        <a href="https://scholar.google.com/citations?user=zXASIq8AAAAJ&hl=en" target="_blank"><nobr>Vladimir Zlokolica<sup>2</sup></nobr></a> &emsp;
+                        <a href="http://vision.deis.unibo.it/~smatt/Site/Home.html" target="_blank"><nobr>Stefano Mattoccia<sup>1</sup></nobr></a> &emsp;
+                    </h6>
+                    <sup>1</sup>&nbsp;Department of Computer Science and Engineering, University of Bologna, Italy</br><sup>2</sup>&nbsp;<nobr>Sony Depthsensing Solutions, Brussels, Belgium&nbsp;&nbsp;&nbsp;</nobr><br>
+                </div>
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-md-12 mt-3">
+                    <a href="" class="btn btn-secondary btn-sm" target="_blank"><i class="fa-solid fa-file-pdf"></i>&nbsp;&nbsp;Paper</a>
+                    <!--<a href="#" class="btn btn-secondary btn-sm" target="_blank"><i class="ai ai-arxiv"></i></i>&nbsp;&nbsp;arXiv</a>-->
+                    <a href="#citation" class="btn btn-secondary btn-sm"><i class="fa-solid fa-file"></i>&nbsp;&nbsp;BibTeX</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-0 col-md-2"></div>
+                <div class="col-sm-12 col-md-8">
+                    <!--
+                    <video class="w-100 mt-4" autoplay loop muted>
+                        <source src="" type="video/mp4" />
+                    </video>
+                    -->
+                    <h3 class="mt-3">Abstract</h3>
+                    <hr class="hr" />
+                    <p>
+                        We present ProDyGS, a novel dynamic 3D Gaussian Splatting framework for high-quality novel view synthesis from videos captured by a single static camera. 
+                        While existing methods rely on multi-view setups or significant camera motion for geometric constraints, our approach addresses the challenging scenario 
+                        where multi-view supervision is completely absent. We overcome this limitation by generating synthetic multi-view supervision through depth-guided proxy 
+                        image synthesis. Specifically, we estimate temporally consistent depth maps using foundational monocular depth networks, then construct 3D Gaussian 
+                        representations that generate proxy images from arbitrary viewpoints. A deformation network learns temporal dynamics by warping canonical Gaussians using 
+                        this augmented supervision. Experiments on the DyNeRF dataset demonstrate that our method achieves state-of-the-art performance while requiring only monocular 
+                        depth estimation as external supervision, outperforming approaches that rely on stronger priors such as scene flow.
+                    </p>
+
+                   
+
+                    <h3 class="mt-5" id="citation">Please consider citing our paper</h3>
+                    <hr class="hr"/>
+                    <pre class="w-100 user-select-all font-monospace border border-secondary bg-dark mb-5 p-2">
+                    </pre>
+                    
+                    <footer class="bg-dark text-white text-center py-3 mt-5">
+                        <div class="container">
+                            <p>
+                                This project page tamplate is inspired by <a href="https://nianticlabs.github.io/acezero/">ACE Zero</a>
+                            </p>
+                        </div>
+                    </footer>
+                </div>
+                <div class="col-sm-0 col-md-2"></div>    
+                    
+                </div>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+            <!-- <script src="https://kit.fontawesome.com/746ee6bfa4.js" crossorigin="anonymous"></script> -->
+            
+            <script>
+            window.addEventListener('load', videoScroll);
+            window.addEventListener('scroll', videoScroll);
+
+            function videoScroll() {
+
+                if ( document.querySelectorAll('video[autoplay]').length > 0) {
+
+                    var windowHeight = window.innerHeight,
+                    videoEl = document.querySelectorAll('video[autoplay]');
+
+                    for (var i = 0; i < videoEl.length; i++) {
+
+                        var thisVideoEl = videoEl[i],
+                            videoHeight = thisVideoEl.clientHeight,
+                            videoClientRect = thisVideoEl.getBoundingClientRect().top;
+
+                        if ( (thisVideoEl.parentNode.classList.contains('carousel-item') && thisVideoEl.parentNode.classList.contains('active')) || (thisVideoEl.parentNode.nodeName === 'DIV' && !thisVideoEl.parentNode.classList.contains('carousel-item') )) {
+                            if ( videoClientRect <= ( (windowHeight) - (videoHeight*.8) ) && videoClientRect >= ( 0 - ( videoHeight*.2 ) ) ) {
+                                thisVideoEl.play();
+                            } else {
+                                thisVideoEl.pause();
+                            }
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
