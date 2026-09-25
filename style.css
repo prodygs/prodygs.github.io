@@ -1,6 +1,16 @@
+/*
 :root {
   --background-color: #000000;
   --primary-color: #CCCCCC;
+  --secondary-color: #4188e5;
+  --secondary-hover-color: #73a0db;
+}
+*/
+
+:root {
+  --background-color: rgb(255, 255, 255);
+  --primary-color: #222222;
+  --secondary-background-color: rgb(124, 124, 124);
   --secondary-color: #4188e5;
   --secondary-hover-color: #73a0db;
 }
@@ -64,4 +74,11 @@ b {
 
 li {
   color: var(--primary-color);
+}
+
+.table-highlight > td,
+.table-highlight > th {
+  background-color: rgba(65, 136, 229, 0.22) !important;
+  color: var(--background-color) !important;
+  font-weight: 600;
 }
